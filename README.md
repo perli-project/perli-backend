@@ -1,5 +1,5 @@
 ## ✨ 백엔드 주요 기능
-  > AI 스마트 카드 실적 매니저 백엔드는 마이데이터로 수집한 카드 사용 내역을 바탕으로 실적/혜택 규칙을 정확히 계산하고, AI로 최적 지출 플랜과 카드 조합을 제안하는 서버입니다. <br> Spring Boot 기반의 MSA 지향 구조 위에 Drools(규칙 엔진), JPA+MyBatis, Spring AI<br>(LLM 에이전트), OptaPlanner/OR-Tools(최적화), FCM(알림)을 통합해 정확성 + 지능형 추천을 동시에 <br> 제공합니다.
+  > 백엔드는 마이데이터로 수집한 카드 사용 내역을 바탕으로 실적/혜택 규칙을 정확히 계산하고, AI로 최적 지출 플랜과 카드 조합을 제안하는 서버이며<br> Spring Boot 기반 MSA 지향 구조 위에 Drools(규칙 엔진), JPA+MyBatis, Spring AI(LLM 에이전트), OptaPlanner/OR-Tools(최적화), FCM(알림)을 통합해 정확성 + 지능형 추천을 동시에 제공합니다.
 
 <br>
 
