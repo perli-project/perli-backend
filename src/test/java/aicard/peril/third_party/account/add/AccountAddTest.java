@@ -1,6 +1,6 @@
 package aicard.peril.third_party.account.add;
 
-import aicard.peril.third_party.common.ConnectedIdRequest.AccountParams;
+import aicard.peril.third_party.account.create.ConnectedIdRequest.AccountParams;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

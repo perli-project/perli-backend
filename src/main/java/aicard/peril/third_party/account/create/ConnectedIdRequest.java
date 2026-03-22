@@ -1,5 +1,7 @@
-package aicard.peril.third_party.common;
+package aicard.peril.third_party.account.create;
 
+import aicard.peril.third_party.common.JsonParser;
+import aicard.peril.third_party.common.TokenRequest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.codef.api.EasyCodef;
 import io.codef.api.EasyCodefServiceType;
@@ -59,6 +61,13 @@ public class ConnectedIdRequest {
         String organization;
         String loginType;
         String id;
+        /*
+        "birthDate": "980225",
+   "loginTypeLevel":"",
+   "clientTypeLevel":"",
+   "cardNo":"",
+   "cardPassword":"",
+         */
     }
 
     /**
@@ -127,4 +136,37 @@ public class ConnectedIdRequest {
                 new String[]{"data", "connectedId"}
         );
     }
-}
+
+    /**
+     * connectedId 기준 계정 목록 조회 메서드
+     *
+     * - CODEF에 등록된 계정 리스트 조회하는 API 호출
+     *
+     * 처리 과정
+     * 1. connectedId 기반으로 요청 파라미터(accountMap) 구성
+     * 2. CODEF getAccountList API 호출
+     * 3. 응답 결과 로그 출력
+     *
+     * 특징
+     * - 반환값 없이 로그로만 결과 확인하는 구조
+     * - 실제 서비스에서는 응답값 반환하도록 개선 필요
+     *
+     * @param connectedId 계정 조회 대상 connectedId
+     *
+     * @throws UnsupportedEncodingException 인코딩 문제 발생 시
+     * @throws JsonProcessingException JSON 처리 중 오류 발생 시
+     * @throws InterruptedException API 호출 중 인터럽트 발생 시
+     */
+    public void getAccountList(String connectedId) throws UnsupportedEncodingException, JsonProcessingException, InterruptedException {
+    {
+
+        EasyCodef codef = token.getCodef();
+        HashMap<String, Object> accountMap = new HashMap<>();
+
+        accountMap.put("connectedId", connectedId);
+        String result = codef.getAccountList(EasyCodefServiceType.SANDBOX,accountMap);
+
+        log.info(result);
+    }
+
+}}

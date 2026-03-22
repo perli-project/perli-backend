@@ -1,5 +1,6 @@
-package aicard.peril.third_party.common;
+package aicard.peril.third_party.account.create;
 
+import aicard.peril.third_party.common.TokenRequest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -55,7 +56,7 @@ class ConnectedIdRequestTest {
         // given: 요청 파라미터 세팅
         ConnectedIdRequest.AccountParams params = new ConnectedIdRequest.AccountParams();
         params.setClientType("P");
-        params.setOrganization("0001"); // 테스트용 기관코드
+        params.setOrganization("0002"); // 테스트용 기관코드
         params.setLoginType("ID");
         params.setId("test_id");
 
@@ -67,5 +68,27 @@ class ConnectedIdRequestTest {
 
         // then: 정상 발급 여부 검증
         assertNotNull(result);
+    }
+
+    /**
+     * 계정 목록 조회 테스트
+     *
+     * 테스트 목적
+     * - connectedId 발급 후 계정 목록 조회 API가 정상 호출되는지 확인
+     *
+     * 테스트 흐름
+     * 1. AccountParams 생성 및 connectedId 발급
+     * 2. 발급된 connectedId로 계정 목록 조회 호출
+     * 3. 예외 없이 수행되는지 확인
+     *
+     * @throws Exception API 호출 및 내부 로직에서 발생 가능한 예외
+     */
+    @Test
+    void 계정목록_조회_테스트() throws Exception {
+
+        String connectedId ="byi1wYwD40k8hEIiXl6bRF";
+
+        // when & then: 계정 목록 조회가 예외 없이 수행되는지 확인
+        assertDoesNotThrow(() -> connectedIdRequest.getAccountList(connectedId));
     }
 }

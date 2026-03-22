@@ -1,6 +1,6 @@
 package aicard.peril.third_party.account.add;
 
-import aicard.peril.third_party.common.ConnectedIdRequest.AccountParams;
+import aicard.peril.third_party.account.create.ConnectedIdRequest.AccountParams;
 import aicard.peril.third_party.common.TokenRequest;
 import io.codef.api.EasyCodef;
 import io.codef.api.EasyCodefServiceType;
