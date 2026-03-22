@@ -50,11 +50,11 @@ public class AccountAdd {
                     parameterMap
             );
 
-            log.info("CODEF addAccount response = {}", responseJson);
+            log.info("response = {}", responseJson);
             return responseJson;
 
         } catch (Exception e) {
-            log.error("CODEF 계정 추가 실패", e);
+            log.error("계정 추가 실패", e);
             return null;
         }
     }
