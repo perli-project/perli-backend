@@ -31,9 +31,6 @@ ext {
 
 dependencies {
 
-    // ===== LLM 연동 =====
-    implementation 'org.springframework.ai:spring-ai-ollama-spring-boot-starter'     // Spring AI(OpenAI 모델 스타터)
-
     // ===== 규칙 엔진(Drools/KIE) =====
     implementation 'org.drools:drools-core:10.1.0'                             // 규칙엔진 코어(실적/제외 룰)
     implementation 'org.drools:drools-compiler:10.1.0'                         // DRL 규칙 컴파일러
@@ -47,21 +44,24 @@ dependencies {
     // ===== Spring 핵심 =====
     implementation 'org.springframework.boot:spring-boot-starter-web'          // REST API(MVC/JSON)
     implementation 'org.springframework.boot:spring-boot-starter-security'     // 인증/인가
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'     // JPA/Hibernate
+//    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'     // JPA/Hibernate
     implementation 'org.springframework.boot:spring-boot-starter-batch'        // 배치 잡/스케줄 처리
 
-    // ===== MyBatis =====
-    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.5' // 명시적 SQL/매퍼(복잡쿼리/배치)
+    // ===== Codef =====
+    implementation 'io.codef.api:easycodef-java:1.0.6'
+
+//    // ===== MyBatis =====
+//    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.5' // 명시적 SQL/매퍼(복잡쿼리/배치)
 
     // ===== Lombok/드라이버 =====
     compileOnly 'org.projectlombok:lombok'                                      // 보일러플레이트 제거(컴파일 전용)
     annotationProcessor 'org.projectlombok:lombok'                              // Lombok 애노테이션 프로세서
-    runtimeOnly 'com.mysql:mysql-connector-j'                                   // MySQL 드라이버(런타임)
+//    runtimeOnly 'com.mysql:mysql-connector-j'                                   // MySQL 드라이버(런타임)
 
     // ===== Test =====
     testImplementation 'org.springframework.boot:spring-boot-starter-test'      // JUnit/AssertJ/MockMvc 번들
-    testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.5' // MyBatis 테스트 유틸
-    testImplementation 'org.springframework.batch:spring-batch-test'            // Batch 테스트 유틸
+//    testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.5' // MyBatis 테스트 유틸
+//    testImplementation 'org.springframework.batch:spring-batch-test'            // Batch 테스트 유틸
     testImplementation 'org.springframework.security:spring-security-test'      // Security 테스트(Mock 인증)
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'                // JUnit 플랫폼 런처
 }

@@ -37,3 +37,6 @@ out/
 .vscode/
 
 firebase.json
+
+application.yaml
+application.yml
